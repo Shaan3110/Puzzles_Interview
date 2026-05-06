@@ -17,4 +17,24 @@ Let's say the guard was lier , he knows the other guard is the truthy so he is g
 
 In both cases I am getting the gate of hell , just go opposite of what they say and you will have gate of heaven.
 
+## 10 Coins Puzzle
+
+You are blindfolded and 10 coins are placed in front of you on the table. You are allowed to touch the coins but can’t tell which way up they are by feel. You are told that there are 5 coins head up, and 5 coins tails up but not which ones are which. Can you make two piles of coins each with the same number of heads up? You can flip the coins any number of times. 
+
+**Solution** - See, Let's just make 2 random groups with 5 coins each. Now we know that there were 5 heads and 5 tails randomly so if the first group has x heads now the below group will have 5-x .
+
+So to just make them same, flip all coins of first group so it becomes 5-x heads.
+
+Pile 1: H H T T T
+Pile 2: H H H T T
+
+Now flip all coins in Pile 1:
+
+Pile 1 becomes: T T H H H
+Pile 2 remains: H H H T T
+
+Now both piles have 3 heads each.
+
+
+
 
