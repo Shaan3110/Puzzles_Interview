@@ -305,6 +305,8 @@ The camel has the following limitations:
 It can carry a maximum of 1000 bananas at a time.
 It consumes 1 banana per kilometre travelled.
 
+**Solution**-
+
 Step 1: From 3000 to 2000 Bananas
 
 The camel must transport 3000 bananas, but it can carry only 1000 at a time. Therefore, 3 trips are required.
@@ -352,3 +354,127 @@ Bananas consumed: ``466.67``
 
 Bananas remaining at destination:
  ```1000 − 466.67 = 533.33```
+
+##  Jar with Contaminated Pills
+
+You are given five jars of pills, each containing the same number of pills. Every pill normally weighs 10 grams, but one jar contains contaminated pills that weigh 9 grams each. You are allowed to use a digital weighing scale only once.
+
+Since we are allowed to use the weighing scale only once, we need to use a smart strategy rather than weighing each jar separately.
+
+**Solution** -
+
+Step 1: Label the jars as Jar 1 to Jar 5.
+
+Step 2: Take a different number of pills from each jar:
+
+```
+1 pill from Jar 1
+2 pills from Jar 2
+3 pills from Jar 3
+4 pills from Jar 4
+5 pills from Jar 5
+```
+Step 3: Weigh all the selected pills together in one measurement.
+
+If all pills were normal, the total weight would be 150 grams (15 × 10 g). Since one jar has pills that are 1 gram lighter, the actual weight will be less than 150 grams.
+
+Step 4: Identify the jar
+
+```
+149 g → Jar 1
+148 g → Jar 2
+147 g → Jar 3
+146 g → Jar 4
+145 g → Jar 5
+```
+
+## 100 Prisoners with Red/Black Hats
+
+One hundred prisoners are standing in a straight line, all facing the same direction.
+
+Each prisoner is wearing a hat that is either red or black.
+Every prisoner can see the hats of all prisoners standing in front of them, but not their own hat or those behind them.
+The prisoners will be questioned one by one, starting from the last person in the line (who can see all others) and moving forward.
+Rules:
+
+Each prisoner must state the colour of their own hat.
+If the guess is correct, the prisoner survives.
+If the guess is incorrect, the prisoner is executed.
+Before the process begins, the prisoners are allowed to discuss and agree on a strategy.
+Once the questioning starts, no communication is allowed, except for stating “red” or “black”.
+What strategy should the prisoners adopt to maximise the number of survivors, and how many prisoners can be guaranteed to survive?
+
+**Solution** - 
+
+A maximum of 99 prisoners can be guaranteed to survive by using a parity-based strategy.
+
+Step 1: Signal by the Last Prisoner (100th)
+
+The last prisoner counts the number of red hats in front.
+If the count is even, he says “Red”.
+If the count is odd, he says “Black”.
+This announcement encodes the parity (even/odd) of red hats.
+His own survival is uncertain (50% chance), as he is only passing information.
+
+Step 2: Information Available to Others
+
+Each subsequent prisoner has access to:
+
+The initial parity signal
+The answers have already been spoken
+The hats visible in front
+Step 3: Deduction Process
+
+Each prisoner uses the expected parity given by the first prisoner.
+Each prisoner counts the number of red hats visible ahead and the number of red hats confirmed from previous answers.
+Each prisoner compares the observed parity with the expected parity.
+If both match, the prisoner concludes their hat is black.
+If they do not match, the prisoner concludes their hat is red.
+
+Result
+
+The first prisoner may be incorrect.
+The remaining 99 prisoners are guaranteed to be correct.
+
+## Monty Hall problem
+
+The Monty Hall problem is a surprising probability puzzle:
+
+There are 3 doors—two hide goats, and one hides a car.
+You pick one door (let’s call it door 2), hoping it has the car.
+The game show host, Monty Hall, then looks at the other two doors (1 and 3) and opens one that has a goat behind it (Say 3). (If both doors have goats, he chooses one at random.)
+He then says to you, "Do you want to pick door 2 or stick to door 1.
+
+What do you decide to have better chances of winning a car?
+
+**Solution**-
+
+The main trick is that the host would open the door with a goat only, so the chances of the other door having a car are higher. Hence, you should always switch to improve your chances. Below is a detailed solution.
+
+Let’s solve the Monty Hall problem step by step, assuming the gates are numbered 1, 2, and 3:
+
+Setup:
+
+Player’s choice: The player initially picks gate 2.
+The car is equally likely to be behind any of the three gates initially. Let’s evaluate the three possible arrangements:
+
+1. Car behind gate 1:
+
+Player picks gate 2 (initial choice).
+Host must open gate 3, showing a goat (since gate 1 has the car).
+Switching to gate 1 wins the car.
+2. Car behind gate 2:
+
+Player picks gate 2 (initial choice).
+Host opens gate 3, showing a goat.
+Switching to gate 1 loses, as the car is behind gate 2.
+3. Car behind gate 3:
+
+Player picks gate 2 (initial choice).
+Host cannot open gate 3 because it has the car. Instead, he opens gate 1, showing a goat.
+Switching to gate 3 wins the car.
+Summary of outcomes:
+
+In 2 out of 3 scenarios, switching wins the car.
+In 1 out of 3 scenarios, staying with the initial choice wins.
+As probability of winning a car by switching is higher than not switching. It is advantage to switch.
