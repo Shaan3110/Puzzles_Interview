@@ -295,3 +295,60 @@ From Hint 3: The oldest girl likes strawberry ice cream.
 This hint is important because it tells Shyam there is a single eldest daughter. If there were two daughters who were the oldest, Shyam wouldn’t be able to figure out the ages, as there would be ambiguity.
 
 In the combination (2, 6, 6), there are two daughters who are the oldest (6 years old), so this cannot be the correct answer.
+
+## Camel and Banana Problem
+
+A person owns a banana plantation and needs to transport 3000 bananas to a market located 1000 km away. The only available means of transportation is a camel.
+
+The camel has the following limitations:
+
+It can carry a maximum of 1000 bananas at a time.
+It consumes 1 banana per kilometre travelled.
+
+Step 1: From 3000 to 2000 Bananas
+
+The camel must transport 3000 bananas, but it can carry only 1000 at a time. Therefore, 3 trips are required.
+
+For each kilometre:
+
+Two trips involve moving forward and returning, consuming 2 bananas each
+One trip involves only moving forward, consuming 1 banana
+Total consumption = 5 bananas per kilometer
+
+3000 − 5x = 2000
+ x = 200 km
+
+After this stage:
+
+Distance covered = 200 km
+Bananas remaining = 2000
+
+Step 2: From 2000 to 1000 Bananas
+
+Now, 2 trips are required.
+
+For each kilometre:
+
+One trip involves moving forward and returning, consuming 2 bananas
+One trip involves only moving forward, consuming 1 banana
+Total consumption = 3 bananas per kilometer
+
+2000 − 3y = 1000
+ y = 333.33 km
+
+After this stage:
+
+Total distance covered = ``533.33 km``
+Bananas remaining = 1000
+
+Step 3: Final Stage
+
+At this stage, the camel carries 1000 bananas in a single trip.
+
+Remaining distance:
+ ```1000 − 533.33 = 466.67 km```
+
+Bananas consumed: ``466.67``
+
+Bananas remaining at destination:
+ ```1000 − 466.67 = 533.33```
