@@ -578,3 +578,32 @@ Player A: 5 + 2 + 4 = 11
 Player B: 4 + 2 + 3 = 9
 
 Player A wins.
+
+## Elevator Puzzle
+
+A man works on the 10th floor. Every evening he takes the elevator down to the ground floor. But each morning, he only rides it up to the 7th floor and walks the rest, unless it’s raining or other people are with him, in which case he goes all the way to the 10th. Why?
+
+**Solution** -
+
+He is too short to reach the "10" button on the elevator panel, which is positioned vertically higher than the "7" button. But when others are with him, he can ask them to push the button for the 10th floor. On a rainy day, he has an umbrella, so he can press the button using that.
+
+## 100 people in a circle with sword
+
+100 people standing in a circle in order 1 to 100. No. 1 has a sword. He kills the next person (i.e., No. 2) and gives the sword to the next (i.e., No. 3). All people do the same until only 1 survives. Which number survives at the last?
+
+**Solution** -
+
+If the number of people n is a power of 2, the first person will survive.
+After each round, half the people are eliminated, and the person who started the game survives.
+When n is not a power of 2:
+Let 2m be the largest power of 2 less than n (100).
+The formula for the survivor is : Survivor = 2 x (n - 2m) + 1
+
+```
+Apply for n = 100:
+Largest power of 2 less than 100 is 64 (26).
+Remaining people beyond 64 : 100−64 = 36.
+Survivor: 2 × (36) +1 = 73
+```
+
+Answer: `73`
