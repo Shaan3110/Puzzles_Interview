@@ -531,7 +531,8 @@ Example:
 
 Suppose you are given the following rows of coins:
 
-18, 20, 15 ,30, 10, 14
+``18, 20, 15 ,30, 10, 14``
+
 Coins at even places: 20, 30, 14 Coins at odd places: 18, 15, 10 These places are fixed independent of whether the choice of selection must begin from the left or the right-hand side. 
 
 Step 1: Sum of all even placed coins = 20 + 30 + 14 = 64 
@@ -548,10 +549,8 @@ Therefore, be it any situation that arises, the first picker Player A will alway
 
 Case 1: When Player B starts picking from the left corner.
 
-2_pick
 Case 2: When Player B starts picking from the right corner after Player A.
 
-3_pick
 Dynamic Strategy for EVEN = ODD:
 
 When EVEN = ODD, Player A should dynamically evaluate the potential outcomes of the first few moves and choose the highest immediate benefit while considering the opponent's optimal responses.
@@ -560,19 +559,22 @@ Example:
 
 Suppose you are given the following rows of coins:
 
-5, 2, 3, 4, 2, 4
-Sum of even-placed coins: 2 + 4 + 4 = 10
-Sum of odd-placed coins: 5 + 3 + 2 = 10
+``5, 2, 3, 4, 2, 4``
+
+Sum of even-placed coins: ``2 + 4 + 4 = 10``
+Sum of odd-placed coins: ``5 + 3 + 2 = 10``
 In this case, since EVEN == ODD, Player A should dynamically choose based on immediate benefit:
 
-Player A picks 5 (left end), remaining: 2, 3, 4, 2, 4
-Player B picks 4 (right end), remaining: 2, 3, 4, 2
-Player A picks 2 (left end), remaining: 3, 4, 2
-Player B picks 2 (right end), remaining: 3, 4
-Player A picks 4 (right end), remaining: 3
+Player A picks 5 (left end), remaining: ``2, 3, 4, 2, 4``
+Player B picks 4 (right end), remaining: ``2, 3, 4, 2``
+Player A picks 2 (left end), remaining: ``3, 4, 2``
+Player B picks 2 (right end), remaining: ``3, 4``
+Player A picks 4 (right end), remaining: `3`
 Player B picks 3, game over.
+
 Totals:
 
 Player A: 5 + 2 + 4 = 11
 Player B: 4 + 2 + 3 = 9
-∴ Player A wins.
+
+Player A wins.
