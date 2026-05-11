@@ -607,3 +607,32 @@ Survivor: 2 × (36) +1 = 73
 ```
 
 Answer: `73`
+
+## Days of month using 2 dice
+You have two 6-sided dice. You can write a number on each face of the dice from 0 to 9, and you have to represent days from 1 to 31.
+
+Example: For 1, one dice should show 0, and another should show 1; similarly, for 29, one dice should show 2, and another should show 9.
+How can you represent days of the month using two 6-sided dice?  
+
+**Solution** -
+
+So here the main problem is we need 0 to 9 all characters and for 11,22  we need these numbers as available on both.
+
+So, we can do this - first dice 0,1,2,3,7,8
+and second dice as 0,1,2,3,4,5,6
+
+Here 6 can be used for 9 as well so we can use both dice to represent all the numbers from 1 to 31.
+
+## Chessboard and dominos
+
+There is an 8 x 8 chessboard in which two diagonally opposite corners have been cut off. You are given 31 dominoes, and a single domino can cover exactly two squares. Can you use the 31 dominoes to cover the entire board? 
+
+**Solution** -
+
+No
+
+Chess board for 8x8 will have 64 blacks and whites now as we cut off 2 then it's 62.
+
+Now you might thing 31 dominos with 2 each would be 31 * 2 = 62 so it's possible but it's not.
+
+On this chessboard however, we must have 32 black and 30 white squares(if we cut the corners with white squares) or 32 white and 30 black squares(if we cut the corners with black squares). Hence it is not possible to do so. 
