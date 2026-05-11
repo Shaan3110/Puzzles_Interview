@@ -1,5 +1,7 @@
 # Puzzles_Interview
 
+Refer to greeksforgreeks 100 puzzles cheat sheet for better understanding. It's a revision note here -
+
 ## Ant Puzzle
 
 Three Ants and Triangle : There are 3 ants sitting on three corners of a triangle. All ants randomly pick a direction and start moving along the edge of the triangle. What is the probability that any two ants collide?
@@ -478,3 +480,99 @@ Summary of outcomes:
 In 2 out of 3 scenarios, switching wins the car.
 In 1 out of 3 scenarios, staying with the initial choice wins.
 As probability of winning a car by switching is higher than not switching. It is advantage to switch.
+
+## Strategy for a 2 Player Coin Game
+
+Consider a two-player coin game with an even number of coins in a row. Players A and B alternately pick one coin from any one end. The player who collects the greater total value wins. Develop a strategy for the player making the first turn i.e, Player A, that guarantees A never loses.
+
+Note that a greedy strategy (always picking the larger end coin) may fail.
+
+Initial row:  18, 20, 15, 30, 10, 14
+Player A picks 18, now row of coins is: 20,15,30,10,14
+
+After first pick:  20 ,15, 30, 10, 14
+Player B picks 20, now row of coins is: 15,30,10,14
+
+After second pick:  15 ,30 ,10, 14
+Player A picks 15, now row of coins is
+
+After third pick:  30, 10, 14
+Player B picks 30, now row of coins is
+
+After 4th pick:  10 ,14
+Player A picks 14, now row of coins is
+
+Last pick:  10 
+Player B picks 10, game over.
+
+The total value collected by Player B is more (20 + 
+30 + 10) compared to first player (18 + 15 + 14).
+So the second picker, Player B wins. 
+
+
+**Solution** -
+
+The Player A should always start picking all the even position ones so he can win, so from righ side it would give us all even position ones booked.
+
+The idea is to add up the values at even positions and odd positions, then compare the two. The first player can always force the game so that the opponent gets only one of these two sets of coins, depending on which set has the smaller total.
+
+So here are the steps to a proper algorithm of either winning the game or getting a tie:
+
+Step 1: Count the sum of all the coins in the even places(2nd, 4th, 6th and so on). Let the sum be "EVEN".
+
+Step 2: Count the sum of all the coins in the odd places(1st, 3rd, 5th and so on). Let the sum be "ODD".
+
+Step 3: Compare the value of EVEN and ODD and this is how the first player, here Player A must begin its selection.
+
+if (EVEN > ODD), start choosing from the right-hand corner and select all the even placed coins.
+if (EVEN < ODD), start choosing from the left-hand corner and select all the odd placed coins.
+if (EVEN == ODD), use a dynamic strategy to maximize the value based on the immediate and subsequent possible values (see approach below).
+Example:
+
+Suppose you are given the following rows of coins:
+
+18, 20, 15 ,30, 10, 14
+Coins at even places: 20, 30, 14 Coins at odd places: 18, 15, 10 These places are fixed independent of whether the choice of selection must begin from the left or the right-hand side. 
+
+Step 1: Sum of all even placed coins = 20 + 30 + 14 = 64 
+
+Step 2: Sum of all odd placed coins = 18 + 15 + 10 = 43 
+
+Step 3: Comparing the even and the odd placed coins where EVEN > ODD.
+
+Therefore, Player A must start selecting from the right-hand side and choose all the even-placed coins every time(here they are 14, 30 and 20).
+So first picker, Player A picks 14. Now, irrespective of whether the second Player B starts selecting from the left-hand side i.e., 18 or from the right-hand side i.e., 10, the even placed coins i.e., 14, 30 and 20 are booked for the Player A.
+Therefore, be it any situation that arises, the first picker Player A will always win the game. 
+
+
+
+Case 1: When Player B starts picking from the left corner.
+
+2_pick
+Case 2: When Player B starts picking from the right corner after Player A.
+
+3_pick
+Dynamic Strategy for EVEN = ODD:
+
+When EVEN = ODD, Player A should dynamically evaluate the potential outcomes of the first few moves and choose the highest immediate benefit while considering the opponent's optimal responses.
+
+Example:
+
+Suppose you are given the following rows of coins:
+
+5, 2, 3, 4, 2, 4
+Sum of even-placed coins: 2 + 4 + 4 = 10
+Sum of odd-placed coins: 5 + 3 + 2 = 10
+In this case, since EVEN == ODD, Player A should dynamically choose based on immediate benefit:
+
+Player A picks 5 (left end), remaining: 2, 3, 4, 2, 4
+Player B picks 4 (right end), remaining: 2, 3, 4, 2
+Player A picks 2 (left end), remaining: 3, 4, 2
+Player B picks 2 (right end), remaining: 3, 4
+Player A picks 4 (right end), remaining: 3
+Player B picks 3, game over.
+Totals:
+
+Player A: 5 + 2 + 4 = 11
+Player B: 4 + 2 + 3 = 9
+∴ Player A wins.
